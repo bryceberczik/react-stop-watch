@@ -8,6 +8,7 @@ export default function Background() {
     const  [isActive, setIsActive] = useState(false);
     const [isPaused, setIsPaused] = useState(true);
     const [time, setTime] = useState(0);
+    const [archivedTimes, setArchivedTimes] = useState([]);
 
     useEffect(() => {
         let interval = null;
@@ -25,6 +26,12 @@ export default function Background() {
         };
     }, [isActive, isPaused]);
 
+    useEffect(() => {
+        const storedTimes = JSON.parse(localStorage.getItem('archivedTimes')) || [];
+        setArchivedTimes(storedTimes);
+    }, []);
+
+
     const handlePauseResume = () => {
         if (isActive) {
             setIsPaused(!isPaused);
@@ -39,6 +46,12 @@ export default function Background() {
         setTime(0);
         setIsActive(false);
     }
+
+    const handleArchive = () => {
+        const newArchivedTimes = [...archivedTimes, time];
+        setArchivedTimes(newArchivedTimes);
+        localStorage.setItem('archivedTimes', JSON.stringify(newArchivedTimes));
+    };
 
     return(
         <div className='div-container'>
@@ -57,11 +70,12 @@ export default function Background() {
             paused={isPaused}
             handlePauseResume={handlePauseResume}
             handleReset={handleReset}
+            handleArchive={handleArchive}
             />
 
             </div>
 
-            <ArchivedTimes />
+            <ArchivedTimes times={archivedTimes}/>
 
         </div>
         </div>

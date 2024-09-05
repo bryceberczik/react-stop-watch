@@ -12,6 +12,7 @@ export default function Controls({
   paused,
   handlePauseResume,
   handleReset,
+  handleArchive
 }) {
   return (
     <div className="container">
@@ -39,7 +40,7 @@ export default function Controls({
           />
         </div>
         <div className="archive">
-          <FontAwesomeIcon icon={faBoxArchive} className="archive-icon" />
+          <FontAwesomeIcon icon={faBoxArchive} className="archive-icon" onClick={handleArchive}/>
         </div>
       </div>
     </div>
