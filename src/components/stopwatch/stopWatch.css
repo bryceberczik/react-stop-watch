@@ -7,11 +7,11 @@
 
     background-color: #504E4E;
     padding: 1px;
-    width: 220px;
+    width: 280px;
     position: absolute;
     border-radius: 20px;
     margin: 0;
-    left: 70px;
+    left: 35px;
     top: 60px;
     box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.stopwatch-container span {
+.stopwatch-container .time {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color: white;
