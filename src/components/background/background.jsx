@@ -1,6 +1,7 @@
-import './background.css'
-import Stopwatch from '../stopwatch/stopWatch'
-import Controls from '../controls/controls'
+import './background.css';
+import Stopwatch from '../stopwatch/stopWatch';
+import Controls from '../controls/controls';
+import ArchivedTimes from '../archived-times/archivedTimes';
 export default function Background() {
 
     return(
@@ -14,6 +15,9 @@ export default function Background() {
             <Controls />
 
             </div>
+
+            <ArchivedTimes />
+
         </div>
         </div>
     )

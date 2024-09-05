@@ -1,10 +1,10 @@
 import "./stopWatch.css";
 
-export default function Stopwatch() {
+export default function Stopwatch({ timer }) {
   return (
     <div className='container'>
       <div className="stopwatch-container">
-        <h1>12:30</h1>
+        <span>00:00</span>
       </div>
     </div>
   );
