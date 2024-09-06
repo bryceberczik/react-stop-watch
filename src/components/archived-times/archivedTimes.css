@@ -12,24 +12,58 @@
     top: 60px;
     left: 350px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
 }
 
-.example-time {
+.archived-time {
 
     background-color: #504E4E;
     padding: 1px;
-    width: 175px;
-    height: 90px;
+    width: 160px;
+    height: 85px;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    position: relative;
+    cursor: pointer;
+
 }
 
-.example-time h1 {
+.archived-time:hover {
+
+    background-color: #A9A9A9;
+
+}
+
+.archived-time:hover .trash {
+
+    display: block;
+}
+
+.trash {
+
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    color: #B56565;
+}
+
+.trash:hover {
+
+    color: #C08080;
+}
+
+.archived-time-text {
 
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color: white;
     margin: 0;
-    font-size: 65px;
+    font-size: 55px;
 }
