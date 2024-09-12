@@ -17,30 +17,27 @@ export default function Controls({
   return (
     <div className="container">
       <div className="controls-container">
-        <div className="pauseResume">
+        <div className="pauseResume" onClick={handlePauseResume}>
           {active && !paused ? (
             <FontAwesomeIcon
               icon={faPause}
               className="pause-icon"
-              onClick={handlePauseResume}
             />
           ) : (
             <FontAwesomeIcon
               icon={faPlay}
               className="play-icon"
-              onClick={handlePauseResume}
             />
           )}
         </div>
-        <div className="discard">
+        <div className="discard" onClick={handleReset}>
           <FontAwesomeIcon
             icon={faTrash}
             className="discard-icon"
-            onClick={handleReset}
           />
         </div>
-        <div className="archive">
-          <FontAwesomeIcon icon={faBoxArchive} className="archive-icon" onClick={handleArchive}/>
+        <div className="archive" onClick={handleArchive}>
+          <FontAwesomeIcon icon={faBoxArchive} className="archive-icon"/>
         </div>
       </div>
     </div>
